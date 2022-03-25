@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+
+RUN apt-get update -y && apt-get -y install clang
+
+COPY . /usr/src/cpp_poc
+WORKDIR /usr/src/cpp_poc
+
+RUN clang++ -o Test main.cpp
+
+CMD [ "./Test" ]
