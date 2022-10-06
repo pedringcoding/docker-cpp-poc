@@ -69,10 +69,10 @@ pipeline {
                         TAG_RELEASE = "${docker_releaseImageName}"
                     }
                     steps {
-                        sh "docker build -t ${TAG_DEFAULT} -f ${DOCKERFILE} ."
+                        echo "docker build -t ${TAG_DEFAULT} -f ${DOCKERFILE} ."
                         script {
                             if (env.BRANCH_NAME == 'main') {
-                                sh "docker tag ${TAG_DEFAULT} ${TAG_RELEASE}"
+                                echo "docker tag ${TAG_DEFAULT} ${TAG_RELEASE}"
                             }
                         }
                     }
@@ -91,10 +91,10 @@ pipeline {
                         TAG_RELEASE = "${docker_releaseImageName}"
                     }
                     steps {
-                        sh "docker build -t ${TAG_DEFAULT} -f ${DOCKERFILE} ."
+                        echo "docker build -t ${TAG_DEFAULT} -f ${DOCKERFILE} ."
                         script {
                             if (env.BRANCH_NAME == 'main') {
-                                sh "docker tag ${TAG_DEFAULT} ${TAG_RELEASE}"
+                                echo "docker tag ${TAG_DEFAULT} ${TAG_RELEASE}"
                             }
                         }
                     }
